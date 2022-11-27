@@ -5,7 +5,7 @@ Navigate the project directory and run the command `./gradlew bootrun` and it wi
 
 You can also open this project directly from the IDE and run it. 
 
-###Prerequisite
+### Prerequisite
 Java version 17
 
 Gradle 7.4
