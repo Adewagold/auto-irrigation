@@ -4,12 +4,13 @@ import com.banque.exception.PlotNotFoundException;
 import com.banque.request.PlotRequest;
 import com.banque.request.PlotSlotRequest;
 import com.banque.service.response.PlotResponse;
-import com.banque.service.PlotService;
+import com.banque.service.plot.PlotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.OK;
 
 @RestController
@@ -29,7 +30,7 @@ public class PlotController {
 
     @PostMapping(value = "create")
     public ResponseEntity<PlotResponse> createNewPlot(@RequestBody PlotRequest plotRequest){
-        return new ResponseEntity<>(plotService.savePlot(plotRequest),OK);
+        return new ResponseEntity<>(plotService.savePlot(plotRequest),CREATED);
     }
 
     @GetMapping(value = "{id}")

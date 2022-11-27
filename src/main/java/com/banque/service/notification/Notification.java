@@ -1,4 +1,4 @@
-package com.banque.service.response;
+package com.banque.service.notification;
 
 /**
  * Notification interface to handle systems notifications and alerts

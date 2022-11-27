@@ -1,4 +1,4 @@
-package com.banque.service;
+package com.banque.service.sensor;
 
 import com.banque.model.PlotSlot;
 

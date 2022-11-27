@@ -1,7 +1,9 @@
-package com.banque.service;
+package com.banque.service.sensor;
 
 import com.banque.model.PlotSlot;
+import com.banque.service.notification.Notification;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Recover;
 import org.springframework.retry.annotation.Retryable;
@@ -10,8 +12,10 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class OEMSensor implements Sensor{
-    private static final boolean SENSOR_STATUS = true;
+    private static final boolean SENSOR_STATUS = false;
     private static final int MAX_RETRY_TIMES = 3;
+    @Autowired
+    private Notification notification;
 
     @Override
     public boolean online() {
@@ -32,6 +36,9 @@ public class OEMSensor implements Sensor{
     @Override
     public boolean recovery(RuntimeException e, PlotSlot plotSlot){
         log.info("Sensor called for {} times. Sending alert to support team.",MAX_RETRY_TIMES);
+        var title = String.format("Failed to trigger irrigation for %s", plotSlot.getPlotId());
+        var message = String.format("Kindly investigate why the sensor is failing to trigger irrigation.");
+        notification.sendNotification("#alert-sensor", title, message);
         return false;
     }
 }

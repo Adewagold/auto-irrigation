@@ -3,12 +3,9 @@ package com.banque.job;
 import com.banque.model.PlotSlot;
 import com.banque.repository.PlotRepository;
 import com.banque.repository.PlotSlotRepository;
-import com.banque.service.Sensor;
+import com.banque.service.sensor.Sensor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.retry.annotation.Backoff;
-import org.springframework.retry.annotation.Retryable;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.banque.service;
+package com.banque.service.plot;
 
 import com.banque.exception.PlotNotFoundException;
 import com.banque.model.Plot;

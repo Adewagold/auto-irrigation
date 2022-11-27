@@ -51,7 +51,7 @@ public class DataBootstrap implements CommandLineRunner{
         PlotSlot plotSlot = new PlotSlot();
         plotSlot.setPlotId(plot.getId());
         plotSlot.setWaterRequired(44.5);
-        plotSlot.setIrrigationTime(new Time(currentHour, currentMinute+1,0));
+        plotSlot.setIrrigationTime(new Time(currentHour, currentMinute,0));
         plotSlot.setStatus("completed");
         plotSlotRepository.save(plotSlot);
 
