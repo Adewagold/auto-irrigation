@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class OEMSensor implements Sensor{
-    private static final boolean SENSOR_STATUS = false;
+    private static final boolean SENSOR_STATUS = true;
     private static final int MAX_RETRY_TIMES = 3;
 
     @Override
