@@ -186,3 +186,7 @@ The sensor has a mock implementation that contains a Retry mechanism that allows
 2022-11-27T17:31:00.035+04:00  INFO 37092 --- [   scheduling-1] c.b.s.notification.SlackNotification     : Alert details [destination:#alert-sensor, title:Failed to trigger irrigation for 2, message:Kindly investigate why the sensor is failing to trigger irrigation.]
 
 ```
+
+### Tests
+The service contains some tests to ensure that some functionality works as expected. However some tests are not included and assumptions are made that certain validations were made already.
+![img_1.png](img_1.png)
