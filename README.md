@@ -10,9 +10,6 @@ Java version 17
 
 Gradle 7.4
 
-### From an IDE
-Open the project in an IDE like **InteliJ** and run the `main` method in the `TakeHomeChallengeApplication` class located in `src/main/java/com/league/challenge/TakeHomeChallengeApplication.java`
-
 ### Run the service from terminal
 Open a terminal in the project directory
 
